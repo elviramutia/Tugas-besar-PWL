@@ -41,7 +41,7 @@ Menggunakan **Tailwind CSS** dengan *Clean UI / Modern EduTech Theme*. Sistem me
 ---
 
 ### Kredensial Uji Coba (Bawaan Seeder)
-Password untuk semua akun di bawah ini adalah: `12345678`
+Password untuk semua akun di bawah ini adalah: `password`
 
 | Role | Identitas Login (Username) |
 | :--- | :--- |
