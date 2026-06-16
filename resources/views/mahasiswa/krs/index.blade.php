@@ -40,40 +40,42 @@
             <!-- Daftar KRS Diambil -->
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
                 <h3 class="font-semibold text-lg mb-4">Mata Kuliah Diambil</h3>
-                <table class="w-full border-collapse border border-gray-300 mb-4">
-                    <thead>
-                        <tr class="bg-gray-100">
-                            <th class="border p-2">Kode MK</th>
-                            <th class="border p-2">Nama</th>
-                            <th class="border p-2">SKS</th>
-                            <th class="border p-2">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse($krs as $k)
-                            <tr>
-                                <td class="border p-2 text-center">{{ $k->matakuliah->kode_matakuliah }}</td>
-                                <td class="border p-2">{{ $k->matakuliah->nama_matakuliah }}</td>
-                                <td class="border p-2 text-center">{{ $k->matakuliah->sks }}</td>
-                                <td class="border p-2 text-center">
-                                    <form action="{{ route('mahasiswa.krs.destroy', $k->id) }}" method="POST" onsubmit="return confirm('Drop mata kuliah ini?');">
-                                        @csrf @method('DELETE')
-                                        <button type="submit" class="text-red-600 hover:underline">Hapus</button>
-                                    </form>
-                                </td>
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse border border-gray-300 mb-4">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="border p-2">Kode MK</th>
+                                <th class="border p-2">Nama</th>
+                                <th class="border p-2">SKS</th>
+                                <th class="border p-2">Aksi</th>
                             </tr>
-                        @empty
-                            <tr><td colspan="4" class="border p-2 text-center">Belum ada mata kuliah yang diambil.</td></tr>
-                        @endforelse
-                    </tbody>
-                    <tfoot>
-                        <tr class="bg-gray-100 font-semibold">
-                            <td colspan="2" class="border p-2 text-right">Total SKS:</td>
-                            <td class="border p-2 text-center">{{ $totalSks }}</td>
-                            <td class="border p-2"></td>
-                        </tr>
-                    </tfoot>
-                </table>
+                        </thead>
+                        <tbody>
+                            @forelse($krs as $k)
+                                <tr>
+                                    <td class="border p-2 text-center">{{ $k->matakuliah->kode_matakuliah }}</td>
+                                    <td class="border p-2">{{ $k->matakuliah->nama_matakuliah }}</td>
+                                    <td class="border p-2 text-center">{{ $k->matakuliah->sks }}</td>
+                                    <td class="border p-2 text-center">
+                                        <form action="{{ route('mahasiswa.krs.destroy', $k->id) }}" method="POST" onsubmit="return confirm('Drop mata kuliah ini?');">
+                                            @csrf @method('DELETE')
+                                            <button type="submit" class="text-red-600 hover:underline">Hapus</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr><td colspan="4" class="border p-2 text-center">Belum ada mata kuliah yang diambil.</td></tr>
+                            @endforelse
+                        </tbody>
+                        <tfoot>
+                            <tr class="bg-gray-100 font-semibold">
+                                <td colspan="2" class="border p-2 text-right">Total SKS:</td>
+                                <td class="border p-2 text-center">{{ $totalSks }}</td>
+                                <td class="border p-2"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
 
         </div>

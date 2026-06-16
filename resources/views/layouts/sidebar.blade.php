@@ -121,4 +121,17 @@
             <x-sidebar-link :href="route('dosen.jadwal.index')" :active="request()->routeIs('dosen.jadwal.*') || request()->routeIs('dosen.absensi.*')" icon="calendar">Jadwal Mengajar</x-sidebar-link>
         @endif
     </div>
+
+    <!-- User Profile Snippet (Bottom) -->
+    <div class="p-4 border-t border-indigo-900/50 bg-[#171440]">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold">
+                {{ substr(Auth::user()->name, 0, 1) }}
+            </div>
+            <div class="flex-1 min-w-0">
+                <p class="text-sm font-medium text-white truncate">{{ Auth::user()->name }}</p>
+                <p class="text-xs text-indigo-300 truncate capitalize">{{ Auth::user()->role }}</p>
+            </div>
+        </div>
+    </div>
 </div>

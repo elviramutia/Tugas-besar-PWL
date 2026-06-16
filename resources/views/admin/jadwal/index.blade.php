@@ -44,40 +44,42 @@
                             @endif
                         </form>
                     </div>
-                    <table class="w-full border-collapse border border-gray-300">
-                        <thead>
-                            <tr class="bg-gray-100">
-                                <th class="border p-2">Mata Kuliah</th>
-                                <th class="border p-2">Dosen</th>
-                                <th class="border p-2">Kelas</th>
-                                <th class="border p-2">Angkatan</th>
-                                <th class="border p-2">Hari</th>
-                                <th class="border p-2">Jam</th>
-                                <th class="border p-2">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse($jadwals as $j)
-                                <tr>
-                                    <td class="border p-2">{{ $j->matakuliah->nama_matakuliah }}</td>
-                                    <td class="border p-2">{{ $j->dosen->nama }}</td>
-                                    <td class="border p-2 text-center">{{ $j->kelas }}</td>
-                                    <td class="border p-2 text-center">{{ $j->angkatan ?? '-' }}</td>
-                                    <td class="border p-2 text-center">{{ $j->hari }}</td>
-                                    <td class="border p-2 text-center">{{ date('H:i', strtotime($j->jam)) }}</td>
-                                    <td class="border p-2 text-center space-x-2 flex justify-center">
-                                        <a href="{{ route('admin.jadwal.edit', $j->id) }}" class="text-blue-600 hover:underline">Edit</a>
-                                        <form action="{{ route('admin.jadwal.destroy', $j->id) }}" method="POST" onsubmit="return confirm('Yakin hapus?');">
-                                            @csrf @method('DELETE')
-                                            <button type="submit" class="text-red-600 hover:underline">Hapus</button>
-                                        </form>
-                                    </td>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse border border-gray-300">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="border p-2">Mata Kuliah</th>
+                                    <th class="border p-2">Dosen</th>
+                                    <th class="border p-2">Kelas</th>
+                                    <th class="border p-2">Angkatan</th>
+                                    <th class="border p-2">Hari</th>
+                                    <th class="border p-2">Jam</th>
+                                    <th class="border p-2">Aksi</th>
                                 </tr>
-                            @empty
-                                <tr><td colspan="7" class="border p-2 text-center">Data tidak ditemukan.</td></tr>
-                            @endforelse
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @forelse($jadwals as $j)
+                                    <tr>
+                                        <td class="border p-2">{{ $j->matakuliah->nama_matakuliah }}</td>
+                                        <td class="border p-2">{{ $j->dosen->nama }}</td>
+                                        <td class="border p-2 text-center">{{ $j->kelas }}</td>
+                                        <td class="border p-2 text-center">{{ $j->angkatan ?? '-' }}</td>
+                                        <td class="border p-2 text-center">{{ $j->hari }}</td>
+                                        <td class="border p-2 text-center">{{ date('H:i', strtotime($j->jam)) }}</td>
+                                        <td class="border p-2 text-center space-x-2 flex justify-center">
+                                            <a href="{{ route('admin.jadwal.edit', $j->id) }}" class="text-blue-600 hover:underline">Edit</a>
+                                            <form action="{{ route('admin.jadwal.destroy', $j->id) }}" method="POST" onsubmit="return confirm('Yakin hapus?');">
+                                                @csrf @method('DELETE')
+                                                <button type="submit" class="text-red-600 hover:underline">Hapus</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr><td colspan="7" class="border p-2 text-center">Data tidak ditemukan.</td></tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
                     <div class="mt-4">{{ $jadwals->links() }}</div>
                 </div>
             </div>

@@ -17,34 +17,36 @@
                             <button type="submit" class="bg-gray-800 text-white px-4 rounded-r-md hover:bg-gray-700">Cari</button>
                         </form>
                     </div>
-                    <table class="w-full border-collapse border border-gray-300">
-                        <thead>
-                            <tr class="bg-gray-100">
-                                <th class="border p-2">Kode MK</th>
-                                <th class="border p-2">Nama Mata Kuliah</th>
-                                <th class="border p-2">SKS</th>
-                                <th class="border p-2">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse($matakuliahs as $m)
-                                <tr>
-                                    <td class="border p-2 text-center">{{ $m->kode_matakuliah }}</td>
-                                    <td class="border p-2">{{ $m->nama_matakuliah }}</td>
-                                    <td class="border p-2 text-center">{{ $m->sks }}</td>
-                                    <td class="border p-2 text-center space-x-2 flex justify-center">
-                                        <a href="{{ route('admin.matakuliah.edit', $m->kode_matakuliah) }}" class="text-blue-600 hover:underline">Edit</a>
-                                        <form action="{{ route('admin.matakuliah.destroy', $m->kode_matakuliah) }}" method="POST" onsubmit="return confirm('Yakin hapus?');">
-                                            @csrf @method('DELETE')
-                                            <button type="submit" class="text-red-600 hover:underline">Hapus</button>
-                                        </form>
-                                    </td>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse border border-gray-300">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="border p-2">Kode MK</th>
+                                    <th class="border p-2">Nama Mata Kuliah</th>
+                                    <th class="border p-2">SKS</th>
+                                    <th class="border p-2">Aksi</th>
                                 </tr>
-                            @empty
-                                <tr><td colspan="4" class="border p-2 text-center">Data tidak ditemukan.</td></tr>
-                            @endforelse
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @forelse($matakuliahs as $m)
+                                    <tr>
+                                        <td class="border p-2 text-center">{{ $m->kode_matakuliah }}</td>
+                                        <td class="border p-2">{{ $m->nama_matakuliah }}</td>
+                                        <td class="border p-2 text-center">{{ $m->sks }}</td>
+                                        <td class="border p-2 text-center space-x-2 flex justify-center">
+                                            <a href="{{ route('admin.matakuliah.edit', $m->kode_matakuliah) }}" class="text-blue-600 hover:underline">Edit</a>
+                                            <form action="{{ route('admin.matakuliah.destroy', $m->kode_matakuliah) }}" method="POST" onsubmit="return confirm('Yakin hapus?');">
+                                                @csrf @method('DELETE')
+                                                <button type="submit" class="text-red-600 hover:underline">Hapus</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr><td colspan="4" class="border p-2 text-center">Data tidak ditemukan.</td></tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
                     <div class="mt-4">{{ $matakuliahs->links() }}</div>
                 </div>
             </div>
