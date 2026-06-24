@@ -55,7 +55,7 @@
 
             <!-- Card 4: Classes -->
             <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex items-center justify-between hover:shadow-md transition-shadow relative overflow-hidden">
-                 <div class="absolute -right-6 -top-6 w-24 h-24 bg-purple-50 rounded-full opacity-50"></div>
+                 <div class="absolute -right-6 -top-6 w-24 h-24 bg-pink-50 rounded-full opacity-50"></div>
                 <div class="relative z-10">
                     <p class="text-sm font-medium text-gray-500 mb-1">Status Sistem</p>
                     <h3 class="text-2xl font-bold text-gray-800 mt-1">Normal</h3>
@@ -64,7 +64,7 @@
                         <span>Semua layanan aktif</span>
                     </p>
                 </div>
-                <div class="w-14 h-14 rounded-full bg-purple-600 text-white flex items-center justify-center relative z-10 shadow-lg shadow-purple-600/30">
+                <div class="w-14 h-14 rounded-full bg-pink-600 text-white flex items-center justify-center relative z-10 shadow-lg shadow-pink-600/30">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                 </div>
             </div>

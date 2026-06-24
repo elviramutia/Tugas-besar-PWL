@@ -11,40 +11,38 @@
                         <div class="mb-4 bg-green-100 text-green-700 p-3 rounded">{{ session("success") }}</div>
                     @endif
                     <div class="flex justify-between items-center mb-4">
-                        <a href="{{ route('admin.dosen.create') }}" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Tambah Dosen</a>
+                        <a href="{{ route('admin.dosen.create') }}" class="bg-rose-600 text-white px-4 py-2 rounded hover:bg-rose-700">Tambah Dosen</a>
                         <form method="GET" action="{{ route('admin.dosen.index') }}" class="flex">
-                            <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari dosen..." class="border-gray-300 rounded-l-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                            <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari dosen..." class="border-gray-300 rounded-l-md shadow-sm focus:border-rose-500 focus:ring-rose-500">
                             <button type="submit" class="bg-gray-800 text-white px-4 rounded-r-md hover:bg-gray-700">Cari</button>
                         </form>
                     </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full border-collapse border border-gray-300">
-                            <thead>
-                                <tr class="bg-gray-100">
-                                    <th class="border p-2">NIDN</th>
-                                    <th class="border p-2">Nama Dosen</th>
-                                    <th class="border p-2">Aksi</th>
+                    <table class="w-full border-collapse border border-gray-300">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="border p-2">NIDN</th>
+                                <th class="border p-2">Nama Dosen</th>
+                                <th class="border p-2">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse($dosens as $d)
+                                <tr>
+                                    <td class="border p-2 text-center">{{ $d->nidn }}</td>
+                                    <td class="border p-2">{{ $d->nama }}</td>
+                                    <td class="border p-2 text-center space-x-2 flex justify-center">
+                                        <a href="{{ route('admin.dosen.edit', $d->nidn) }}" class="text-blue-600 hover:underline">Edit</a>
+                                        <form action="{{ route('admin.dosen.destroy', $d->nidn) }}" method="POST" onsubmit="return confirm('Yakin hapus?');">
+                                            @csrf @method('DELETE')
+                                            <button type="submit" class="text-red-600 hover:underline">Hapus</button>
+                                        </form>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                @forelse($dosens as $d)
-                                    <tr>
-                                        <td class="border p-2 text-center">{{ $d->nidn }}</td>
-                                        <td class="border p-2">{{ $d->nama }}</td>
-                                        <td class="border p-2 text-center space-x-2 flex justify-center">
-                                            <a href="{{ route('admin.dosen.edit', $d->nidn) }}" class="text-blue-600 hover:underline">Edit</a>
-                                            <form action="{{ route('admin.dosen.destroy', $d->nidn) }}" method="POST" onsubmit="return confirm('Yakin hapus?');">
-                                                @csrf @method('DELETE')
-                                                <button type="submit" class="text-red-600 hover:underline">Hapus</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <tr><td colspan="3" class="border p-2 text-center">Data tidak ditemukan.</td></tr>
-                                @endforelse
-                            </tbody>
-                        </table>
-                    </div>
+                            @empty
+                                <tr><td colspan="3" class="border p-2 text-center">Data tidak ditemukan.</td></tr>
+                            @endforelse
+                        </tbody>
+                    </table>
                     <div class="mt-4">{{ $dosens->links() }}</div>
                 </div>
             </div>

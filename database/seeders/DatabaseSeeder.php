@@ -24,24 +24,9 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin'
         ]);
 
-        // Dosen
+        // Dosen (Tidak Dibuatkan Akun Login Sesuai Permintaan)
         $dosen1 = Dosen::create(['nidn' => '1111111111', 'nama' => 'Dr. Budi Santoso']);
-        User::create([
-            'name' => $dosen1->nama,
-            'email' => $dosen1->nidn . '@siakad.com',
-            'password' => Hash::make('password'),
-            'role' => 'dosen',
-            'nidn' => $dosen1->nidn
-        ]);
-
         $dosen2 = Dosen::create(['nidn' => '2222222222', 'nama' => 'Prof. Andi Wijaya']);
-        User::create([
-            'name' => $dosen2->nama,
-            'email' => $dosen2->nidn . '@siakad.com',
-            'password' => Hash::make('password'),
-            'role' => 'dosen',
-            'nidn' => $dosen2->nidn
-        ]);
 
         // Matakuliah
         Matakuliah::create(['kode_matakuliah' => 'IF123456', 'nama_matakuliah' => 'Pemrograman Web II', 'sks' => 3]);
@@ -50,14 +35,14 @@ class DatabaseSeeder extends Seeder
         // Mahasiswa (Sesuai dengan nama user)
         $mhs = Mahasiswa::create([
             'npm' => '5520122139',
-            'nama' => 'Reza Puda Julianda',
+            'nama' => 'Elvira',
             'kelas' => 'IF-A',
             'angkatan' => 2022
         ]);
         
         User::create([
-            'name' => 'Reza Puda Julianda',
-            'email' => 'reza@siakad.com',
+            'name' => 'Elvira',
+            'email' => 'elvira@siakad.com',
             'password' => Hash::make('password'),
             'role' => 'mahasiswa',
             'npm' => '5520122139'

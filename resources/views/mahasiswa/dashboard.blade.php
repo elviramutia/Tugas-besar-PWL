@@ -5,10 +5,10 @@
 
     <div class="space-y-6">
         <!-- Welcome Banner -->
-        <div class="bg-indigo-600 rounded-2xl p-6 text-white shadow-lg shadow-indigo-600/20 relative overflow-hidden">
+        <div class="bg-rose-600 rounded-2xl p-6 text-white shadow-lg shadow-rose-600/20 relative overflow-hidden">
             <div class="relative z-10">
                 <h3 class="text-2xl font-bold mb-2">Selamat datang kembali, {{ Auth::user()->name }}! 👋</h3>
-                <p class="text-indigo-100 max-w-xl">Semoga harimu menyenangkan. Berikut adalah ringkasan jadwal perkuliahanmu saat ini.</p>
+                <p class="text-rose-100 max-w-xl">Semoga harimu menyenangkan. Berikut adalah ringkasan jadwal perkuliahanmu saat ini.</p>
             </div>
             <!-- Decorative circle -->
             <div class="absolute right-0 top-0 -mt-16 -mr-16 w-64 h-64 bg-white opacity-10 rounded-full blur-2xl"></div>
@@ -18,7 +18,7 @@
         <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
             <div class="p-6 border-b border-gray-100 flex items-center justify-between">
                 <h4 class="text-lg font-semibold text-gray-800">Jadwal Perkuliahan Anda</h4>
-                <div class="text-sm text-indigo-600 font-medium bg-indigo-50 px-3 py-1 rounded-full">
+                <div class="text-sm text-rose-600 font-medium bg-rose-50 px-3 py-1 rounded-full">
                     Semester Ganjil 2026
                 </div>
             </div>
@@ -70,7 +70,7 @@
                                         <svg class="w-12 h-12 text-gray-300 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
                                         <p class="text-base font-medium text-gray-900 mb-1">Belum ada jadwal</p>
                                         <p class="text-sm">Anda belum mengambil KRS atau jadwal belum diatur.</p>
-                                        <a href="{{ route('mahasiswa.krs.index') }}" class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors">Isi KRS Sekarang</a>
+                                        <a href="{{ route('mahasiswa.krs.index') }}" class="mt-4 px-4 py-2 bg-rose-600 text-white rounded-md text-sm font-medium hover:bg-rose-700 transition-colors">Isi KRS Sekarang</a>
                                     </div>
                                 </td>
                             </tr>

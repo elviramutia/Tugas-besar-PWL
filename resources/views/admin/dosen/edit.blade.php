@@ -6,12 +6,12 @@
             @csrf @method('PUT')
             <div class="mb-4">
                 <label class="block text-sm font-medium text-gray-700">NIDN</label>
-                <input type="text" name="nidn" value="{{ old('nidn', $dosen->nidn) }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required maxlength="10">
+                <input type="text" name="nidn" value="{{ old('nidn', $dosen->nidn) }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rose-500 focus:ring-rose-500" required maxlength="10">
                 @error('nidn') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
             </div>
             <div class="mb-4">
                 <label class="block text-sm font-medium text-gray-700">Nama Dosen</label>
-                <input type="text" name="nama" value="{{ old('nama', $dosen->nama) }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required maxlength="50">
+                <input type="text" name="nama" value="{{ old('nama', $dosen->nama) }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rose-500 focus:ring-rose-500" required maxlength="50">
                 @error('nama') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
             </div>
 
@@ -21,17 +21,17 @@
             
             <div class="mb-4">
                 <label class="block text-sm font-medium text-gray-700">Email Akun</label>
-                <input type="email" name="email" value="{{ old('email', $dosen->user->email ?? '') }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="Biarkan kosong untuk email bawaan">
+                <input type="email" name="email" value="{{ old('email', $dosen->user->email ?? '') }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rose-500 focus:ring-rose-500" placeholder="Biarkan kosong untuk email bawaan">
                 @error('email') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
             </div>
             <div class="mb-6">
                 <label class="block text-sm font-medium text-gray-700">Password Baru</label>
-                <input type="password" name="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="Isi untuk reset password">
+                <input type="password" name="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rose-500 focus:ring-rose-500" placeholder="Isi untuk reset password">
                 @error('password') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
             </div>
             <div class="flex justify-end gap-2 mt-6">
                 <a href="{{ route('admin.dosen.index') }}" class="bg-gray-300 text-gray-700 px-4 py-2 rounded">Batal</a>
-                <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded">Simpan</button>
+                <button type="submit" class="bg-rose-600 text-white px-4 py-2 rounded">Simpan</button>
             </div>
         </form>
     </div></div></div>

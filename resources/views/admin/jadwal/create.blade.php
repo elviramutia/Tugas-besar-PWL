@@ -6,7 +6,7 @@
             @csrf
             <div class="mb-4">
                 <label class="block text-sm font-medium text-gray-700">Mata Kuliah</label>
-                <select name="kode_matakuliah" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
+                <select name="kode_matakuliah" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rose-500 focus:ring-rose-500" required>
                     <option value="">Pilih Mata Kuliah</option>
                     @foreach($matakuliahs as $mk)
                         <option value="{{ $mk->kode_matakuliah }}" {{ old('kode_matakuliah') == $mk->kode_matakuliah ? 'selected' : '' }}>{{ $mk->nama_matakuliah }}</option>
@@ -16,7 +16,7 @@
             </div>
             <div class="mb-4">
                 <label class="block text-sm font-medium text-gray-700">Dosen Pengajar</label>
-                <select name="nidn" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
+                <select name="nidn" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rose-500 focus:ring-rose-500" required>
                     <option value="">Pilih Dosen</option>
                     @foreach($dosens as $d)
                         <option value="{{ $d->nidn }}" {{ old('nidn') == $d->nidn ? 'selected' : '' }}>{{ $d->nama }}</option>
@@ -27,7 +27,7 @@
             <div class="mb-4 grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Kelas</label>
-                    <select name="kelas" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
+                    <select name="kelas" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rose-500 focus:ring-rose-500" required>
                         <option value="">Pilih Kelas</option>
                         @foreach(['A', 'B', 'C', 'D'] as $k)
                             <option value="{{ $k }}" {{ old('kelas') == $k ? 'selected' : '' }}>{{ $k }}</option>
@@ -37,7 +37,7 @@
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Angkatan</label>
-                    <select name="angkatan" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
+                    <select name="angkatan" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rose-500 focus:ring-rose-500" required>
                         <option value="">Pilih Angkatan</option>
                         @for($year = 2022; $year <= 2026; $year++)
                             <option value="{{ $year }}" {{ old('angkatan') == $year ? 'selected' : '' }}>{{ $year }}</option>
@@ -63,7 +63,7 @@
             </div>
             <div class="flex justify-end gap-2">
                 <a href="{{ route('admin.jadwal.index') }}" class="bg-gray-300 text-gray-700 px-4 py-2 rounded">Batal</a>
-                <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded">Simpan</button>
+                <button type="submit" class="bg-rose-600 text-white px-4 py-2 rounded">Simpan</button>
             </div>
         </form>
     </div></div></div>

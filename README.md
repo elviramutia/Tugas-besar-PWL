@@ -2,14 +2,6 @@
 
 Sistem Informasi Akademik (SIAKAD) yang dibangun menggunakan Laravel 12 dengan implementasi fitur lengkap sesuai dengan kriteria penilaian maksimal, termasuk pencapaian bonus *deployment*.
 
-## 🌐 Live Preview / Hosting Link (BONUS)
-
-Aplikasi ini telah berhasil di-*deploy* / di-*hosting* dan dapat diakses secara *online* (publik) tanpa *error* pada tautan berikut:
-
-**👉 [https://overlord-karma-icy.ngrok-free.dev](https://overlord-karma-icy.ngrok-free.dev) 👈**
-
----
-
 ## 📝 Penjelasan Singkat Fungsi Masing-Masing Halaman
 
 Aplikasi ini dibagi menjadi 3 hak akses utama (Admin, Dosen, Mahasiswa), di mana setiap halamannya dirancang untuk kebutuhan spesifik:
@@ -24,12 +16,8 @@ Aplikasi ini dibagi menjadi 3 hak akses utama (Admin, Dosen, Mahasiswa), di mana
 - **Manajemen Mata Kuliah (CRUD)**: Tempat mengelola daftar kurikulum/mata kuliah beserta SKS-nya.
 - **Manajemen Jadwal & Penugasan (CRUD)**: Halaman paling krusial bagi Admin untuk mengatur plot jadwal (relasi antara Dosen, Mata Kuliah, Kelas, Hari, dan Jam perkuliahan). Dilengkapi dengan fitur *filter/pencarian* lanjutan.
 
-### 3. Halaman Dosen
-- **Dashboard Dosen**: Menampilkan *summary* profil dosen dan statistik kelas yang mereka ajar hari ini.
-- **Jadwal Mengajar**: Menampilkan daftar kelas eksklusif yang hanya ditugaskan kepada dosen yang sedang login. Dosen tidak dapat melihat atau mengubah jadwal dosen lain.
-- **Kelola Absensi**: Halaman terintegrasi di mana dosen dapat membuka/menutup sesi absensi secara *real-time* sesuai jadwal untuk mengontrol kehadiran mahasiswa di kelasnya.
 
-### 4. Halaman Mahasiswa
+### 3. Halaman Mahasiswa
 - **Dashboard Mahasiswa**: Ringkasan pengumuman akademik, jadwal kelas hari ini, dan progres sks.
 - **Manajemen KRS**: Halaman pengisian Kartu Rencana Studi. Mahasiswa dapat melihat daftar jadwal kelas yang tersedia, melakukan "Ambil Kelas" (input), serta "Drop Kelas" (hapus). Terdapat fitur unggulan **Export KRS ke PDF**.
 - **Absensi Kelas**: Halaman bagi mahasiswa untuk melakukan presensi mandiri. Tombol "Hadir" hanya akan aktif jika dosen telah membuka sesi absen pada jam tersebut.
@@ -61,11 +49,10 @@ Terdapat direktori `screenshots` di dalam *root* repository ini yang berisi kump
 ---
 
 ### 🔑 Kredensial Uji Coba (Bawaan Seeder)
-Password untuk semua akun di bawah ini adalah: `password`
+Password untuk akun admin bawah ini adalah: `password`
+Password untuk semua akun mahasiswa bawah ini adalah: `12345678`
 
 | Role | Identitas Login (Username) |
 | :--- | :--- |
 | **Admin** | admin@siakad.com |
-| **Dosen** | lalan@siakad.com |
-| **Dosen** | bunda@siakad.com |
-| **Mahasiswa** | reza@siakad.com |
+| **Mahasiswa** | elvira@siakad.com |

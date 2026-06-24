@@ -57,7 +57,7 @@
 
             <!-- Card 4: Classes -->
             <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex items-center justify-between hover:shadow-md transition-shadow relative overflow-hidden">
-                 <div class="absolute -right-6 -top-6 w-24 h-24 bg-purple-50 rounded-full opacity-50"></div>
+                 <div class="absolute -right-6 -top-6 w-24 h-24 bg-pink-50 rounded-full opacity-50"></div>
                 <div class="relative z-10">
                     <p class="text-sm font-medium text-gray-500 mb-1">Sesi Kelas Hari Ini</p>
                     <h3 class="text-3xl font-bold text-gray-800">36</h3>
@@ -66,7 +66,7 @@
                         <span>8 sesi sedang berlangsung</span>
                     </p>
                 </div>
-                <div class="w-14 h-14 rounded-full bg-purple-600 text-white flex items-center justify-center relative z-10 shadow-lg shadow-purple-600/30">
+                <div class="w-14 h-14 rounded-full bg-pink-600 text-white flex items-center justify-center relative z-10 shadow-lg shadow-pink-600/30">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                 </div>
             </div>
@@ -108,7 +108,7 @@
                 <div class="space-y-4">
                     <!-- Schedule Item -->
                     <div class="flex items-start gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
-                        <div class="w-12 h-12 rounded-lg bg-indigo-50 flex flex-col items-center justify-center text-indigo-700 flex-shrink-0">
+                        <div class="w-12 h-12 rounded-lg bg-rose-50 flex flex-col items-center justify-center text-rose-700 flex-shrink-0">
                             <span class="text-xs font-bold uppercase">08:00</span>
                         </div>
                         <div>
@@ -137,7 +137,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="mt-4 w-full py-2 text-sm text-indigo-600 font-medium hover:text-indigo-800 text-center transition-colors">
+                <button class="mt-4 w-full py-2 text-sm text-rose-600 font-medium hover:text-rose-800 text-center transition-colors">
                     Lihat Semua Jadwal
                 </button>
             </div>
@@ -145,7 +145,7 @@
             <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
                 <h4 class="text-lg font-semibold text-gray-800 mb-4">Pengumuman Terbaru</h4>
                 <div class="space-y-4">
-                    <div class="border-l-4 border-indigo-500 pl-4 py-1">
+                    <div class="border-l-4 border-rose-500 pl-4 py-1">
                         <p class="text-xs text-gray-400 mb-1">08 Jun 2026</p>
                         <h5 class="font-medium text-gray-800 text-sm">Batas Akhir Pengisian KRS Semester Ganjil</h5>
                         <p class="text-sm text-gray-500 mt-1 line-clamp-2">Mohon kepada seluruh mahasiswa untuk segera menyelesaikan pengisian Kartu Rencana Studi (KRS) sebelum tanggal 15 Juni 2026.</p>
@@ -188,7 +188,7 @@
                         {
                             label: 'Akses Sistem',
                             data: [1200, 1350, 1250, 1400, 1300, 800, 400],
-                            borderColor: '#8b5cf6', // purple-500
+                            borderColor: '#8b5cf6', // pink-500
                             backgroundColor: 'transparent',
                             borderWidth: 2,
                             borderDash: [5, 5],
